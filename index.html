@@ -21,17 +21,20 @@
 
         <p>{{ websiteUrl }}</p>
 
-        <h3>Facebook</h3>
-        <p v-html="facebookBaseUrl + websiteUrl"></p>
+        <h2>Links</h2>
+        <div id="links">
+            <h3>Facebook</h3>
+            <p v-html="facebookBaseUrl + websiteUrl"></p>
 
-        <h3>Google+</h3>
-        <p v-html="googleBaseUrl + websiteUrl"></p>
+            <h3>Google+</h3>
+            <p v-html="googleBaseUrl + websiteUrl"></p>
 
-        <h3>Twitter</h3>
-        <p v-html="twitterBaseUrl + websiteUrl"> </p>
+            <h3>Twitter</h3>
+            <p v-html="twitterBaseUrl + websiteUrl"> </p>
 
-        <h3>Linkedin</h3>
-        <p v-html="linkedinBaseUrl + websiteUrl"></p>
+            <h3>Linkedin</h3>
+            <p v-html="linkedinBaseUrl + websiteUrl"></p>
+        </div>
 
         <script src="vue.min.js"></script>
         <script src="app.js"></script>
