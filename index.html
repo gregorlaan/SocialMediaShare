@@ -36,6 +36,22 @@
             <p v-html="linkedinBaseUrl + websiteUrl"></p>
         </div>
 
+        <h2>Buttons</h2>
+        <div id="buttons">
+            <h3>Facebook</h3>            
+            <p>{{ displayButton(facebookBaseUrl) }}</p>
+
+            <h3>Google+</h3>            
+            <p>{{ displayButton(googleBaseUrl) }}</p>
+
+            <h3>Twitter</h3>            
+            <p>{{ displayButton(twitterBaseUrl) }}</p>
+
+            <h3>Linkedin</h3>            
+            <p>{{ displayButton(linkedinBaseUrl) }}</p>
+            
+        </div>
+
         <script src="vue.min.js"></script>
         <script src="app.js"></script>
 
