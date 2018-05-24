@@ -30,7 +30,7 @@
         <h2>Buttons</h2>
         <div id="buttons" v-for="base in baseUrl">
             <h3>{{ base.name }}</h3>             
-            <p>{{ displayButton(base.url) }}</p>
+            <p>{{ displayButton(base.url,base.name) }}</p>
         </div>
 
         <script src="vue.min.js"></script>
