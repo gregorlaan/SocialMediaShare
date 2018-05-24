@@ -22,20 +22,26 @@
         <p>{{ websiteUrl }}</p>
 
         <h2>Links</h2>
-        <div id="links" v-for="base in baseUrl">
-            <h3>{{ base.name }}</h3>
-            <p v-html="base.url + websiteUrl"></p>
+        <div id="links">
+            <template v-for="base in baseUrl">
+                <h3>{{ base.name }}</h3>
+                <p v-html="base.url + websiteUrl"></p>
+            </template>
         </div>
 
         <h2>Buttons</h2>
-        <div id="buttons" v-for="base in baseUrl">
-            <h3>{{ base.name }}</h3>             
-            <p>{{ displayButton(base.url,base.name) }}</p>
+        <div id="buttons">
+            <template v-for="base in baseUrl">
+                <h3>{{ base.name }}</h3>
+                <p>{{ displayButton(base.url,base.name) }}</p>
+            </template>
         </div>
 
         <h2>Live Preview</h2>
-        <div id="live-preview" v-for="base in baseUrl">           
-            <a :href="base.url + websiteUrl">{{ base.name }}</a>
+        <div id="live-preview">
+            <template v-for="base in baseUrl">
+                <a :href="base.url + websiteUrl">{{ base.name }}</a>
+            </template>
         </div>
 
         <script src="vue.min.js"></script>
