@@ -33,6 +33,11 @@
             <p>{{ displayButton(base.url,base.name) }}</p>
         </div>
 
+        <h2>Live Preview</h2>
+        <div id="live-preview" v-for="base in baseUrl">           
+            <a :href="base.url + websiteUrl">{{ base.name }}</a>
+        </div>
+
         <script src="vue.min.js"></script>
         <script src="app.js"></script>
 
