@@ -8,12 +8,29 @@ var app = new Vue({
             { name: 'Twitter', url: 'https://twitter.com/share?url=https://' },
             { name: 'Linkedin', url: 'https://www.linkedin.com/shareArticle?mini=true&url=https://' }
         ],
-        buttonStyle: {}
+        ButtonStyle: {
+            color: 'blue',
+            border: '2px solid #007afc',
+            padding: '5px 10px',
+            textDecoration: 'none',
+            margin: '5px',
+            fontFamily: 'Helvetica'
+        },
+        customButtonStyle: ''
     },
     methods: {
         displayButton: function (baseUrl, baseName) {
             var button = '<a href="' + baseUrl + this.websiteUrl + '">' + baseName +'</a>';
             return button;
+        },
+        applyStyle: function () {
+            this.ButtonStyle = JSON.parse(this.customButtonStyle);
+        },
+        onLoad: function () {
+            this.customButtonStyle = JSON.stringify(this.ButtonStyle);
         }
+    },
+    mounted: function () {
+        this.onLoad();
     }
 });

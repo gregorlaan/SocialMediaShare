@@ -39,13 +39,13 @@
 
         <h2>Style</h2>
         <div id="style">
-            <textarea v-model="buttonStyle" name="button-style" id="button-style" rows="10"></textarea>
+            <textarea @input="applyStyle" v-model="customButtonStyle" name="button-style" id="button-style" rows="10"></textarea>
         </div>
 
         <h2>Live Preview</h2>
         <div id="live-preview">
             <template v-for="base in baseUrl">
-                <a :style="buttonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
+                <a v-bind:style="ButtonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
             </template>
         </div>
 
