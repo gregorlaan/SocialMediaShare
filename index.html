@@ -21,7 +21,21 @@
 
         <p>{{ websiteUrl }}</p>
 
-        <h2 @click="selectedTab = 'links'">Links</h2>
+        <ul id="menu">
+            <li>
+                <button @click="selectedTab = 'links'">Links</button>
+            </li>
+            <li>
+                <button @click="selectedTab = 'buttons'">Buttons</button>
+            </li>
+            <li>
+                <button @click="selectedTab = 'style'">Style</button>
+            </li>
+            <li>
+                <button @click="selectedTab = 'live-preview'">Live Preview</button>
+            </li>
+        </ul>
+
         <div id="links" v-if="selectedTab === 'links'">
             <template v-for="base in baseUrl">
                 <h3>{{ base.name }}</h3>
@@ -29,7 +43,6 @@
             </template>
         </div>
 
-        <h2 @click="selectedTab = 'buttons'">Buttons</h2>
         <div id="buttons" v-if="selectedTab === 'buttons'">
             <template v-for="base in baseUrl">
                 <h3>{{ base.name }}</h3>
@@ -37,12 +50,10 @@
             </template>
         </div>
 
-        <h2 @click="selectedTab = 'style'">Style</h2>
         <div id="style" v-if="selectedTab === 'style'">
             <textarea @input="applyStyle" v-model="customButtonStyle" name="button-style" id="button-style" rows="10"></textarea>
         </div>
 
-        <h2 @click="selectedTab = 'live-preview'">Live Preview</h2>
         <div id="live-preview" v-if="selectedTab === 'live-preview'">
             <template v-for="base in baseUrl">
                 <a v-bind:style="ButtonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
