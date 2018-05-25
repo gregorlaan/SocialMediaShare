@@ -16,18 +16,26 @@ var app = new Vue({
             margin: '5px',
             fontFamily: 'Helvetica'
         },
-        customButtonStyle: ''
+        customButtonStyle: '',
+        className: 'social-button'
     },
     methods: {
         displayButton: function (baseUrl, baseName) {
-            var button = '<a href="' + baseUrl + this.websiteUrl + '">' + baseName +'</a>';
+            var button = '<a class="' + this.className + '" href="' + baseUrl + this.websiteUrl + '">' + baseName + '</a>';
             return button;
         },
         applyStyle: function () {
-            this.ButtonStyle = JSON.parse(this.customButtonStyle);
+            this.ButtonStyle = JSON.parse(this.removeClass(this.customButtonStyle));
         },
         onLoad: function () {
-            this.customButtonStyle = JSON.stringify(this.ButtonStyle, null, 2); // spacing level 2
+            this.customButtonStyle = this.addClass() + JSON.stringify(this.ButtonStyle, null, 2); // spacing level 2
+        },
+        addClass: function () {
+            return '.' + this.className + ' ';
+        },
+        removeClass: function (string) {
+            var withoutClass = string.replace(this.addClass(), '');
+            return withoutClass;
         }
     },
     mounted: function () {
