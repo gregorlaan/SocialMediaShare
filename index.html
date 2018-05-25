@@ -22,16 +22,16 @@
         <p>{{ websiteUrl }}</p>
 
         <ul id="menu">
-            <li>
+            <li v-bind:class="{active: selectedTab == 'links'}">
                 <button @click="selectedTab = 'links'">Links</button>
             </li>
-            <li>
+            <li v-bind:class="{active: selectedTab == 'buttons'}">
                 <button @click="selectedTab = 'buttons'">Buttons</button>
             </li>
-            <li>
+            <li v-bind:class="{active: selectedTab == 'style'}">
                 <button @click="selectedTab = 'style'">Style</button>
             </li>
-            <li>
+            <li v-bind:class="{active: selectedTab == 'live-preview'}">
                 <button @click="selectedTab = 'live-preview'">Live Preview</button>
             </li>
         </ul>
