@@ -17,7 +17,8 @@ var app = new Vue({
             fontFamily: 'Helvetica'
         },
         customButtonStyle: '',
-        className: 'social-button'
+        className: 'social-button',
+        selectedTab: 'links'
     },
     methods: {
         displayButton: function (baseUrl, baseName) {
