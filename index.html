@@ -22,17 +22,8 @@
         <p>{{ websiteUrl }}</p>
 
         <ul id="menu">
-            <li v-bind:class="{active: selectedTab == 'links'}">
-                <button @click="selectedTab = 'links'">Links</button>
-            </li>
-            <li v-bind:class="{active: selectedTab == 'buttons'}">
-                <button @click="selectedTab = 'buttons'">Buttons</button>
-            </li>
-            <li v-bind:class="{active: selectedTab == 'style'}">
-                <button @click="selectedTab = 'style'">Style</button>
-            </li>
-            <li v-bind:class="{active: selectedTab == 'live-preview'}">
-                <button @click="selectedTab = 'live-preview'">Live Preview</button>
+            <li v-for="link in menuLinks" v-bind:class="{active: selectedTab == link.url}">
+                <button @click="selectedTab = link.url">{{ link.name }}</button>
             </li>
         </ul>
 

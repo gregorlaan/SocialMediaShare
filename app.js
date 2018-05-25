@@ -19,7 +19,13 @@ var app = new Vue({
         },
         customButtonStyle: '',
         className: 'social-button',
-        selectedTab: 'links'
+        selectedTab: 'links',
+        menuLinks: [
+            { name: 'Links', url: 'links' },
+            { name: 'Buttons', url: 'buttons' },
+            { name: 'Style', url: 'style' },
+            { name: 'Live Preview', url: 'live-preview' }
+        ]
     },
     methods: {
         displayButton: function (baseUrl, baseName) {
