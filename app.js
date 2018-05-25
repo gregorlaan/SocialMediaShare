@@ -27,7 +27,7 @@ var app = new Vue({
             this.ButtonStyle = JSON.parse(this.customButtonStyle);
         },
         onLoad: function () {
-            this.customButtonStyle = JSON.stringify(this.ButtonStyle);
+            this.customButtonStyle = JSON.stringify(this.ButtonStyle, null, 2); // spacing level 2
         }
     },
     mounted: function () {
