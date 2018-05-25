@@ -36,28 +36,30 @@
             </li>
         </ul>
 
-        <div id="links" v-if="selectedTab === 'links'">
-            <template v-for="base in baseUrl">
-                <h3>{{ base.name }}</h3>
-                <p v-html="base.url + websiteUrl"></p>
-            </template>
-        </div>
+        <div class="content">
+            <div id="links" v-if="selectedTab === 'links'">
+                <template v-for="base in baseUrl">
+                    <h3>{{ base.name }}</h3>
+                    <p v-html="base.url + websiteUrl"></p>
+                </template>
+            </div>
 
-        <div id="buttons" v-if="selectedTab === 'buttons'">
-            <template v-for="base in baseUrl">
-                <h3>{{ base.name }}</h3>
-                <p>{{ displayButton(base.url,base.name) }}</p>
-            </template>
-        </div>
+            <div id="buttons" v-if="selectedTab === 'buttons'">
+                <template v-for="base in baseUrl">
+                    <h3>{{ base.name }}</h3>
+                    <p>{{ displayButton(base.url,base.name) }}</p>
+                </template>
+            </div>
 
-        <div id="style" v-if="selectedTab === 'style'">
-            <textarea @input="applyStyle" v-model="customButtonStyle" name="button-style" id="button-style" rows="10"></textarea>
-        </div>
+            <div id="style" v-if="selectedTab === 'style'">
+                <textarea @input="applyStyle" v-model="customButtonStyle" name="button-style" id="button-style" rows="10"></textarea>
+            </div>
 
-        <div id="live-preview" v-if="selectedTab === 'live-preview'">
-            <template v-for="base in baseUrl">
-                <a v-bind:style="ButtonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
-            </template>
+            <div id="live-preview" v-if="selectedTab === 'live-preview'">
+                <template v-for="base in baseUrl">
+                    <a v-bind:style="ButtonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
+                </template>
+            </div>
         </div>
 
         <script src="vue.min.js"></script>

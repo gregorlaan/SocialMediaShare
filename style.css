@@ -6,6 +6,10 @@
     --blue: #007bff;
 }
 
+.content {
+    padding: 10px;
+}
+
 ul#menu {
     margin: 0;
     padding: 0;
