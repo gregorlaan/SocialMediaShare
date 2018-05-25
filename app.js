@@ -25,11 +25,12 @@ var app = new Vue({
             { name: 'Buttons', url: 'buttons' },
             { name: 'Style', url: 'style' },
             { name: 'Live Preview', url: 'live-preview' }
-        ]
+        ],
+        newTab: false
     },
     methods: {
         displayButton: function (baseUrl, baseName) {
-            var button = '<a class="' + this.className + '" href="' + baseUrl + this.websiteUrl + '">' + baseName + '</a>';
+            var button = '<a target="' + (this.newTab ? '_blank' : '_self') + '" class="' + this.className + '" href="' + baseUrl + this.websiteUrl + '">' + baseName + '</a>';
             return button;
         },
         applyStyle: function () {

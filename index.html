@@ -21,6 +21,13 @@
 
         <p>{{ websiteUrl }}</p>
 
+        <div>
+            <label for="new-tab">Open in a new tab: </label>
+            <input v-model="newTab" type="checkbox" name="new-tab" id="new-tab">
+        </div>
+
+        <br>
+
         <ul id="menu">
             <li v-for="link in menuLinks" v-bind:class="{active: selectedTab == link.url}">
                 <button @click="selectedTab = link.url">{{ link.name }}</button>
@@ -48,7 +55,7 @@
 
             <div id="live-preview" v-if="selectedTab === 'live-preview'">
                 <template v-for="base in baseUrl">
-                    <a v-bind:style="ButtonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
+                    <a v-bind:target="newTab ? '_blank' : '_self'" v-bind:style="ButtonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
                 </template>
             </div>
         </div>
