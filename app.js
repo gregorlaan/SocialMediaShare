@@ -7,7 +7,8 @@ var app = new Vue({
             { name: 'Google+', url: 'https://plus.google.com/share?url=https://' },
             { name: 'Twitter', url: 'https://twitter.com/share?url=https://' },
             { name: 'Linkedin', url: 'https://www.linkedin.com/shareArticle?mini=true&url=https://' }
-        ]
+        ],
+        buttonStyle: {}
     },
     methods: {
         displayButton: function (baseUrl, baseName) {
