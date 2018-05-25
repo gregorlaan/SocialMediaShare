@@ -14,7 +14,8 @@ var app = new Vue({
             padding: '5px 10px',
             textDecoration: 'none',
             margin: '5px',
-            fontFamily: 'Helvetica'
+            fontFamily: 'Helvetica',
+            display: 'inline-block'
         },
         customButtonStyle: '',
         className: 'social-button',
