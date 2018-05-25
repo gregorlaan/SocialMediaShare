@@ -40,3 +40,7 @@ ul#menu > li.active:after {
 ul#menu > li.active > button {
     color: var(--blue);
 }
+
+textarea#button-style {
+    width: 100%;
+}
