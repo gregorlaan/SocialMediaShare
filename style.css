@@ -41,6 +41,7 @@ ul#menu > li.active > button {
     color: var(--blue);
 }
 
-textarea#button-style {
+textarea#button-style,
+textarea#button-hover-style {
     width: 100%;
 }

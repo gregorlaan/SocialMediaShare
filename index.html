@@ -50,7 +50,8 @@
             </div>
 
             <div id="style" v-if="selectedTab === 'style'">
-                <textarea @input="applyStyle" v-model="customButtonStyle" name="button-style" id="button-style" rows="10"></textarea>
+                    <textarea @input="applyStyle" v-model="customButtonStyle" name="button-style" id="button-style" rows="10"></textarea>
+                    <textarea @input="applyStyle" v-model="customButtonHoverStyle" name="button-hover-style" id="button-hover-style" rows="10"></textarea>
             </div>
 
             <div id="live-preview" v-if="selectedTab === 'live-preview'">

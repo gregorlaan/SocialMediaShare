@@ -23,6 +23,7 @@ var app = new Vue({
         },
         buttonHoverState: false,
         customButtonStyle: '',
+        customButtonHoverStyle: '',
         className: 'social-button',
         selectedTab: 'links',
         menuLinks: [
@@ -40,15 +41,24 @@ var app = new Vue({
         },
         applyStyle: function () {
             this.buttonStyle = JSON.parse(this.removeClass(this.customButtonStyle));
+            this.buttonHoverStyle = JSON.parse(this.removeClassWithHover(this.customButtonHoverStyle));
         },
         onLoad: function () {
             this.customButtonStyle = this.addClass() + JSON.stringify(this.buttonStyle, null, 2); // spacing level 2
+            this.customButtonHoverStyle = this.addClassWithHover() + JSON.stringify(this.buttonHoverStyle, null, 2); // spacing level 2
         },
         addClass: function () {
             return '.' + this.className + ' ';
         },
+        addClassWithHover: function () {
+            return '.' + this.className + ':hover ';
+        },
         removeClass: function (string) {
             var withoutClass = string.replace(this.addClass(), '');
+            return withoutClass;
+        },
+        removeClassWithHover: function (string) {
+            var withoutClass = string.replace(this.addClassWithHover(), '');
             return withoutClass;
         }
     },
