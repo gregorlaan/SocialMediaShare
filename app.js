@@ -3,10 +3,10 @@ var app = new Vue({
     data: {
         websiteUrl: 'www.yourWebsite.com',
         baseUrl: [
-            { name: 'Facebook', url: 'https://www.facebook.com/sharer.php?u=https://' },
-            { name: 'Google+', url: 'https://plus.google.com/share?url=https://' },
-            { name: 'Twitter', url: 'https://twitter.com/share?url=https://' },
-            { name: 'Linkedin', url: 'https://www.linkedin.com/shareArticle?mini=true&url=https://' }
+            { id: 1, name: 'Facebook', url: 'https://www.facebook.com/sharer.php?u=https://' },
+            { id: 2, name: 'Google+', url: 'https://plus.google.com/share?url=https://' },
+            { id: 3, name: 'Twitter', url: 'https://twitter.com/share?url=https://' },
+            { id: 4, name: 'Linkedin', url: 'https://www.linkedin.com/shareArticle?mini=true&url=https://' }
         ],
         buttonStyle: {
             color: 'blue',
@@ -17,7 +17,11 @@ var app = new Vue({
             fontFamily: 'Helvetica',
             display: 'inline-block'
         },
-        
+        buttonHoverStyle: {
+            color: 'white',
+            backgroundColor: '#007afc'
+        },
+        buttonHoverState: false,
         customButtonStyle: '',
         className: 'social-button',
         selectedTab: 'links',
