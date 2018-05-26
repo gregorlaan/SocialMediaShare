@@ -8,7 +8,7 @@ var app = new Vue({
             { name: 'Twitter', url: 'https://twitter.com/share?url=https://' },
             { name: 'Linkedin', url: 'https://www.linkedin.com/shareArticle?mini=true&url=https://' }
         ],
-        ButtonStyle: {
+        buttonStyle: {
             color: 'blue',
             border: '2px solid #007afc',
             padding: '5px 10px',
@@ -17,6 +17,7 @@ var app = new Vue({
             fontFamily: 'Helvetica',
             display: 'inline-block'
         },
+        
         customButtonStyle: '',
         className: 'social-button',
         selectedTab: 'links',
@@ -34,10 +35,10 @@ var app = new Vue({
             return button;
         },
         applyStyle: function () {
-            this.ButtonStyle = JSON.parse(this.removeClass(this.customButtonStyle));
+            this.buttonStyle = JSON.parse(this.removeClass(this.customButtonStyle));
         },
         onLoad: function () {
-            this.customButtonStyle = this.addClass() + JSON.stringify(this.ButtonStyle, null, 2); // spacing level 2
+            this.customButtonStyle = this.addClass() + JSON.stringify(this.buttonStyle, null, 2); // spacing level 2
         },
         addClass: function () {
             return '.' + this.className + ' ';

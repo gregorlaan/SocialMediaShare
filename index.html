@@ -55,7 +55,7 @@
 
             <div id="live-preview" v-if="selectedTab === 'live-preview'">
                 <template v-for="base in baseUrl">
-                    <a v-bind:target="newTab ? '_blank' : '_self'" v-bind:style="ButtonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
+                    <a v-bind:target="newTab ? '_blank' : '_self'" v-bind:style="buttonStyle" :href="base.url + websiteUrl">{{ base.name }}</a>
                 </template>
             </div>
         </div>
